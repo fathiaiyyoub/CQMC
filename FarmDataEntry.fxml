@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cqmc.FarmDataEntryController">
+   <children>
+      <Button fx:id="returnToMainPageButton" layoutX="100.0" layoutY="432.0" mnemonicParsing="false" onAction="#returnToMainPageButtonHandler" text="Return to Main Page">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="82.0" layoutY="14.0" text="New Farm Data Entry Page">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="91.0" text="Farm Name:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="159.0" text="Farm Address:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="239.0" text="Phone #:">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <Button fx:id="saveDataButton" layoutX="146.0" layoutY="336.0" mnemonicParsing="false" onAction="#saveDataButtonHandler" text="Save Data">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <TextField fx:id="farmNameTextField" layoutX="235.0" layoutY="92.0" promptText="Farm Name" />
+      <TextField fx:id="farmAddressTextField" layoutX="235.0" layoutY="160.0" promptText="Farm Address" />
+      <TextField fx:id="farmPhoneTextField" layoutX="235.0" layoutY="240.0" promptText="Phone Number" />
+      <Button fx:id="cleaDataButton" layoutX="144.0" layoutY="385.0" mnemonicParsing="false" onAction="#cleaDataButtonHandler" text="Clear Data">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cqmc.MainPageController">
+   <children>
+      <Label layoutX="245.0" text="CQMC Operations Recording System">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="246.0" layoutY="35.0" text="Design &amp; Development by: Fathi AIYYOUB | Student ID: 12151675">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="addFarmButton" layoutX="18.0" layoutY="94.0" mnemonicParsing="false" onAction="#addFarmButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Add Farm">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="displayFamrsButton" layoutX="18.0" layoutY="165.0" mnemonicParsing="false" onAction="#displayFamrsButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Display Farms">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="addDairyButton" layoutX="15.0" layoutY="252.0" mnemonicParsing="false" onAction="#addDairyButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Add Dairy">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="displayDairyButton" layoutX="17.0" layoutY="324.0" mnemonicParsing="false" onAction="#displayDairyButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Display Dairies">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="17.0" layoutY="614.0" mnemonicParsing="false" onAction="#exitButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Exit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="displayArea" layoutX="210.0" layoutY="494.0" prefHeight="171.0" prefWidth="662.0" />
+      <Separator layoutX="187.0" layoutY="82.0" orientation="VERTICAL" prefHeight="570.0" prefWidth="2.0" />
+      <Label layoutX="195.0" layoutY="80.0" prefHeight="50.0" prefWidth="154.0" text="Delivery" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="195.0" layoutY="261.0" prefHeight="50.0" prefWidth="154.0" text="Supply" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="farmChoiceMenu" layoutX="286.0" layoutY="147.0" prefHeight="28.0" prefWidth="126.0" />
+      <RadioButton fx:id="rejectedRadioButton" layoutX="568.0" layoutY="90.0" mnemonicParsing="false" text="Rejected" />
+      <RadioButton fx:id="acceptedRadioButton" layoutX="441.0" layoutY="91.0" mnemonicParsing="false" text="Accepted" />
+      <Slider fx:id="deliveryAmountSlider" blockIncrement="1000.0" layoutX="440.0" layoutY="136.0" majorTickUnit="5000.0" max="55000.0" minorTickCount="0" prefHeight="49.0" prefWidth="434.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Separator layoutX="1.0" layoutY="64.0" prefHeight="3.0" prefWidth="883.0" />
+      <ChoiceBox fx:id="dairyChoiceMenu" layoutX="286.0" layoutY="318.0" prefHeight="28.0" prefWidth="126.0" />
+      <Label layoutX="195.0" layoutY="143.0" text="From:">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="193.0" layoutY="314.0" text="To:">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Label>
+      <Separator layoutX="198.0" layoutY="250.0" prefHeight="3.0" prefWidth="678.0" />
+      <Slider fx:id="supplyAmountSlider" blockIncrement="1000.0" layoutX="440.0" layoutY="274.0" majorTickUnit="5000.0" max="55000.0" minorTickCount="0" prefHeight="24.0" prefWidth="434.0" showTickLabels="true" showTickMarks="true" />
+      <Button fx:id="addDeliveryButton" layoutX="694.0" layoutY="89.0" mnemonicParsing="false" onAction="#addDeliveryButtonHandler" text="Add ">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="supplyDate" layoutX="572.0" layoutY="317.0" prefHeight="26.0" prefWidth="263.0" />
+      <DatePicker fx:id="deliveryDate" layoutX="572.0" layoutY="195.0" prefHeight="26.0" prefWidth="263.0" />
+      <Label layoutX="195.0" layoutY="191.0" text="Del. ID:">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="deliveryIdTextField" editable="false" layoutX="286.0" layoutY="195.0" prefHeight="26.0" prefWidth="126.0" text="Auto Increment" />
+      <Label layoutX="440.0" layoutY="190.0" text="Del. Date:">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="314.0" text="Sup. Date:">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="422.0" prefHeight="27.0" prefWidth="154.0" text="Available in Silos">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Separator layoutX="9.0" layoutY="406.0" prefHeight="3.0" prefWidth="171.0" />
+      <Label fx:id="milkAvailableLabel" layoutX="15.0" layoutY="458.0" text=" MilkAvailable" textAlignment="CENTER" textFill="#df1b06">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="addSupplyButton" layoutX="687.0" layoutY="368.0" mnemonicParsing="false" onAction="#addSupplyButtonHandler" text="Add ">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchButton" layoutX="18.0" layoutY="530.0" mnemonicParsing="false" onAction="#searchButtonHandler" prefHeight="50.0" prefWidth="154.0" text="Search">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="resetDeliveryButton" layoutX="795.0" layoutY="89.0" mnemonicParsing="false" onAction="#resetDeliveryButtonHandler" text="Reset Data">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="resetSupplyButton" layoutX="795.0" layoutY="368.0" mnemonicParsing="false" onAction="#resetSupplyButtonHandler" text="Reset Data">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="195.0" layoutY="358.0" prefHeight="50.0" prefWidth="171.0" text="Tanker Reg. #:" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tankerTextField" layoutX="374.0" layoutY="371.0" prefHeight="26.0" prefWidth="126.0" />
+      <Separator layoutX="198.0" layoutY="411.0" prefHeight="3.0" prefWidth="678.0" />
+      <Button fx:id="diaplayDeliveriesButton" layoutX="272.0" layoutY="436.0" mnemonicParsing="false" onAction="#diaplayDeliveriesButtonHandler" prefHeight="35.0" prefWidth="234.0" text="Display Deliveries">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="displaySuppliesButton" layoutX="604.0" layoutY="436.0" mnemonicParsing="false" onAction="#displaySuppliesButtonHandler" prefHeight="35.0" prefWidth="233.0" text="Display Supplies">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="315.0" layoutY="96.0" text="(Receiving Milk)">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="312.0" layoutY="276.0" prefHeight="20.0" prefWidth="107.0" text="(Sending Milk)">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="448.0" layoutY="666.0" text="Version 1.0.0" />
+      <Label fx:id="dateLabel" layoutX="18.0" layoutY="27.0" text="dateLabel">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
