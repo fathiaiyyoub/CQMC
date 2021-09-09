@@ -366,8 +366,10 @@ public class MainPageController implements Initializable {
 
         selectionObject = JOptionPane.showInputDialog(null, "What are you trying to find?", "Search Area", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
         if(selectionObject!=null)
-
-        userSelection = selectionObject.toString();
+        {
+            userSelection = selectionObject.toString();
+        }
+        
         else
         {
             return;
@@ -399,14 +401,11 @@ public class MainPageController implements Initializable {
                 for(int index = 0; index < FarmDataEntryController.farmsArryList.size(); index ++)
                 {           
                     if(FarmDataEntryController.farmsArryList.get(index).toString().toLowerCase().contains(searchKey.toLowerCase()))
-                    {
-                        displayArea.setText("");
-                        displayArea.appendText(FarmDataEntryController.farmsArryList.get(index).toString());
-                        found = true;
-                        return;
-                        
+                    {                   
+                        displayArea.appendText(FarmDataEntryController.farmsArryList.get(index).toString() + "\n");    
                     }
                 } 
+                break;
             }// end farms if block
             
             if("Dairy".equals(userSelection)) // Search in the dairiesArraylis
@@ -415,12 +414,10 @@ public class MainPageController implements Initializable {
                 {           
                     if(DairyDataEntryController.dairiesArrayList.get(index).toString().toLowerCase().contains(searchKey.toLowerCase()))
                     {
-                        displayArea.setText("");
-                        displayArea.appendText(DairyDataEntryController.dairiesArrayList.get(index).toString());
-                        found = true;
-                        return;
-                    }
-                }    
+                        displayArea.appendText(DairyDataEntryController.dairiesArrayList.get(index).toString() + "\n");
+                    } 
+                } 
+                break;
             }// end dairies if block
             
             if("Delivery".equals(userSelection)) // Search in the dairiesArraylis
@@ -429,12 +426,10 @@ public class MainPageController implements Initializable {
                 {           
                     if(DeliveryArrayList.deliveryArrayList.get(index).toString().toLowerCase().contains(searchKey.toLowerCase()))
                     {
-                        displayArea.setText("");
-                        displayArea.appendText(DeliveryArrayList.deliveryArrayList.get(index).toString());
-                        found = true;
-                        return;
+                        displayArea.appendText(DeliveryArrayList.deliveryArrayList.get(index).toString() + "\n");
                     }
-                }    
+                }
+                break;
             }// end deliveries if block
             
             if("Supply".equals(userSelection)) // Search in the dairiesArraylis
@@ -443,12 +438,10 @@ public class MainPageController implements Initializable {
                 {           
                     if(SupplyArrayList.supplyArrayList.get(index).toString().toLowerCase().contains(searchKey.toLowerCase()))
                     {
-                        displayArea.setText("");
-                        displayArea.appendText(SupplyArrayList.supplyArrayList.get(index).toString());
-                        found = true;
-                        return;
+                        displayArea.appendText(SupplyArrayList.supplyArrayList.get(index).toString() + "\n");
                     }
-                }    
+                }  
+                break;
             }// end supplies if block
             this.displayArea.setText(">>>>> We did not find any data that matches your search input <<<<<");
             break; // exits the while loop
