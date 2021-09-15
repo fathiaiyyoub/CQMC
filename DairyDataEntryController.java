@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cqmc;
 
 import java.net.URL;
@@ -67,7 +62,7 @@ public class DairyDataEntryController implements Initializable {
         {
             if(dairyNameTextField.getText().trim().length() == 0)
             {        
-                JOptionPane.showMessageDialog(null, "Farm name cannot be blank");
+                JOptionPane.showMessageDialog(null, "Dairy name cannot be blank");
                 dataValidated = false;
                 return; // to early exit the method
                         // without a return statement, the logic
@@ -80,7 +75,7 @@ public class DairyDataEntryController implements Initializable {
         {
             if(dairyAddressTextField.getText().trim().length() == 0)
             {        
-                JOptionPane.showMessageDialog(null, "Farm name cannot be blank");
+                JOptionPane.showMessageDialog(null, "Dairy Address cannot be blank");
                 dataValidated = false;
                 return; // to early exit the method
                         // without a return statement, the logic
@@ -93,7 +88,7 @@ public class DairyDataEntryController implements Initializable {
         {
             if(dairyPhoneTextField.getText().trim().length() == 0)
             {        
-                JOptionPane.showMessageDialog(null, "Farm name cannot be blank");
+                JOptionPane.showMessageDialog(null, "Dairy phone number cannot be blank");
                 dataValidated = false;
                 return; // to early exit the method
                         // without a return statement, the logic
@@ -106,7 +101,7 @@ public class DairyDataEntryController implements Initializable {
         {
             if(dairyEmailTextField.getText().trim().length() == 0)
             {        
-                JOptionPane.showMessageDialog(null, "Farm name cannot be blank");
+                JOptionPane.showMessageDialog(null, "Dairy email cannot be blank");
                 dataValidated = false;
                 return; // to early exit the method
                         // without a return statement, the logic
@@ -119,6 +114,16 @@ public class DairyDataEntryController implements Initializable {
         String address = this.dairyAddressTextField.getText();
         String phoneNumber = this.dairyPhoneTextField.getText();
         String email = this.dairyEmailTextField.getText();
+        
+        for(int i = 0; i < dairiesArrayList.size(); i++)
+        {
+            if(dairyNameTextField.getText().equalsIgnoreCase(dairiesArrayList.get(i).getName()))
+            {
+                JOptionPane.showMessageDialog(null, "Erro!\nThis Dairy already exists in our database.");
+                dairyNameTextField.setText("");
+                return; 
+            }
+        }
         
         Dairy aDairy = new Dairy(name, address, phoneNumber, email);
         dairiesArrayList.add(aDairy);
@@ -153,3 +158,4 @@ public class DairyDataEntryController implements Initializable {
         // TODO
     }    
 }
+
